@@ -2,3 +2,9 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+* { box-sizing: border-box; }
+.container { margin: 5em auto; width: 50vh; background-color: lightgray; padding: 1em; border-radius: 5px;}
+.row { margin: 1em 0; width: 100%; }
+.text-center { text-align: center; }
+.error-text { color: #f44336; }
+mat-form-field { width: 100%; }

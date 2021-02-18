@@ -1,0 +1,37 @@
+<div class="container">
+  <form #formLogin="ngForm" (ngSubmit)="submit(formLogin)">
+    <h1 class="text-center form-title"><strong>Iniciar sesión</strong></h1>
+
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" name="email" required [(ngModel)]="user.email">
+      </mat-form-field>
+      <p class="error-text" *ngIf="formLogin.submitted && !formLogin.controls.email.valid">Este campo es requerido</p>
+    </div>
+
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Nombres</mat-label>
+        <input matInput type="text" name="nombres" required [(ngModel)]="user.nombres">
+      </mat-form-field>
+      <p class="error-text" *ngIf="formLogin.submitted && !formLogin.controls.nombres.valid">Este campo es requerido</p>
+    </div>
+
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" name="password" required [(ngModel)]="user.password">
+      </mat-form-field>
+      <p class="error-text" *ngIf="formLogin.submitted && !formLogin.controls.password.valid">Este campo es requerido</p>
+    </div>
+
+    <div class="row text-center">
+      <button mat-raised-button color="accent" type="submit">Iniciar sesión</button>
+    </div>
+
+    <div class="row text-center">
+      <a routerLink="/sign-up">¿No tiene cuenta? Registrarse</a>
+    </div>
+  </form>
+</div>

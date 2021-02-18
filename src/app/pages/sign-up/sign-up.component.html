@@ -1,0 +1,37 @@
+<div class="container">
+  <form #formSignUp="ngForm" (ngSubmit)="submit(formSignUp)">
+    <h1 class="text-center form-title"><strong>Crear nueva cuenta</strong></h1>
+
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" name="email" required [(ngModel)]="user.email">
+      </mat-form-field>
+      <p class="error-text" *ngIf="formSignUp.submitted && !formSignUp.controls.email.valid">Este campo es requerido</p>
+    </div>
+
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Nombres</mat-label>
+        <input matInput type="text" name="nombres" required [(ngModel)]="user.nombres">
+      </mat-form-field>
+      <p class="error-text" *ngIf="formSignUp.submitted && !formSignUp.controls.nombres.valid">Este campo es requerido</p>
+    </div>
+
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" name="password" required [(ngModel)]="user.password">
+      </mat-form-field>
+      <p class="error-text" *ngIf="formSignUp.submitted && !formSignUp.controls.password.valid">Este campo es requerido</p>
+    </div>
+
+    <div class="row text-center">
+      <button mat-raised-button color="accent" type="submit">Crear cuenta</button>
+    </div>
+
+    <div class="row text-center">
+      <a routerLink="/login">¿Ya tienes cuenta? / Ingresar</a>
+    </div>
+  </form>
+</div>
