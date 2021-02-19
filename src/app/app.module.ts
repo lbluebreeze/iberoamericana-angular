@@ -13,6 +13,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AppState } from './state/app.state';
+import { AppFacade } from './facade/app.facade';
 
 @NgModule({
   declarations: [
@@ -30,9 +34,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatButtonModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [],
+  providers: [
+    AppFacade,
+    AppState
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,17 @@
-<p>profile works!</p>
+<div class="container">
+  <div class="row">
+    <h1>¡Bienvenido {{ (auth.user | async)?.email ? (auth.user | async)?.displayName : (auth.user | async)?.email }}!</h1>
+  </div>
+  <form #form="ngForm" (ngSubmit)="submit(form)">
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput name="name" [value]="(auth.user | async)?.displayName" [(ngModel)]="name">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Actualizar datos</button>
+    </div>
+  </form>
+</div>

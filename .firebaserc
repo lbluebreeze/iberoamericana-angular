@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-autenticacion": {
+      "hosting": {
+        "login": [
+          "angular-autenticacion"
+        ]
+      }
+    }
+  }
+}

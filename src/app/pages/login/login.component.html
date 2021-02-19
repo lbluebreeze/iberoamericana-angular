@@ -1,4 +1,4 @@
-<div class="container">
+<div class="login">
   <form #formLogin="ngForm" (ngSubmit)="submit(formLogin)">
     <h1 class="text-center form-title"><strong>Iniciar sesión</strong></h1>
 
@@ -27,11 +27,11 @@
     </div>
 
     <div class="row text-center">
-      <button mat-raised-button color="accent" type="submit">Iniciar sesión</button>
+      <button mat-raised-button color="accent" type="submit" [disabled]="formLogin.invalid">Iniciar sesión</button>
     </div>
 
     <div class="row text-center">
-      <a routerLink="/sign-up">¿No tiene cuenta? Registrarse</a>
+      <a routerLink="/sign-up">¿No tienes cuenta? Regístrate aquí</a>
     </div>
   </form>
 </div>

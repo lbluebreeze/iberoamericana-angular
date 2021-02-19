@@ -1,7 +1,12 @@
-<!-- <mat-toolbar>
-  <span>{{title}}</span>
-  <a routerLink="login">Login</a>
-  <a routerLink="profile">Profile</a>
-  <a routerLink="sign-up">Sign Up</a>
-</mat-toolbar> -->
+<p>
+  <mat-toolbar>
+    <span>{{title}}</span>
+    <div fxFlex></div>
+    <span fxFlexOffSet="1">{{ (auth.user | async)?.displayName }}</span>
+    <a routerLink="login" fxFlexOffset="1" *ngIf="!(auth.user | async)">Iniciar sesión</a>
+    <a routerLink="sign-up" fxFlexOffset="1" *ngIf="!(auth.user | async)">Regístrate</a>
+    <a routerLink="profile" fxFlexOffset="1" *ngIf="(auth.user | async)">Perfil</a>
+    <a routerLink="#" fxFlexOffset="1" *ngIf="(auth.user | async)" (click)="signOut()">Cerrar sesión</a>
+  </mat-toolbar>
+</p>
 <router-outlet></router-outlet>
