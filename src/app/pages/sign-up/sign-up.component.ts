@@ -19,9 +19,9 @@ export class SignUpComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.user.email = 'jepadillag14@gmail.com';
-    this.user.nombres = 'Daisy';
-    this.user.password = 'swordfish';
+    this.user.email = '';
+    this.user.nombres = '';
+    this.user.password = '';
   }
 
   submit(form: NgForm) {

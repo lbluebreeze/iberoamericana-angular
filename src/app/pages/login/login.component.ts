@@ -19,9 +19,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.user.email = 'juan_p14@hotmail.com';
-    this.user.nombres = 'Juan Eduardo Padilla González';
-    this.user.password = 'swordfish';
+    this.user.email = '';
+    this.user.nombres = '';
+    this.user.password = '';
   }
 
   submit(form: NgForm) {

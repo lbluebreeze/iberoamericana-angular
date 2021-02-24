@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <h1>¡Bienvenido {{ (auth.user | async)?.email ? (auth.user | async)?.displayName : (auth.user | async)?.email }}!</h1>
+    <h1>¡Bienvenido {{ (auth.user | async)?.displayName ? (auth.user | async)?.displayName : '' }} ({{(auth.user | async)?.email}})!</h1>
   </div>
   <form #form="ngForm" (ngSubmit)="submit(form)">
     <div class="row">
